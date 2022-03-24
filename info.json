@@ -1,13 +1,13 @@
 {
-  "navlinks": ["home", "projects", "skill", "contact"],
+  "navlinks": ["home", "projects", "contact"],
   "skills": [
-    "html5.svg",
-    "css3.svg",
-    "javascript.svg",
-    "react.svg",
-    "sass.svg",
-    "tailwindcss.svg",
-    "git.svg"
+    "html5",
+    "css3",
+    "javascript",
+    "react",
+    "sass",
+    "tailwindcss",
+    "git"
   ],
   "socialMedia": [
     {
@@ -50,7 +50,7 @@
       "name": "loopstudio landing page",
       "live": "https://victoriacheng15.github.io/frontend-mentor-challenges/loopstudios-landing-page/",
       "techStack": "HTML, CSS, and JavaScript",
-      "description": "the landing page for curiosity and immersive experience!"
+      "description": "The landing page for curiosity and immersive experience!"
     }
   ]
 }
