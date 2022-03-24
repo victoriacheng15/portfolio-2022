@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Victoria | Full Stack Developer</title>
+    <title>Victoria | Software Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,91 +19,119 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="circle"></div>
     <nav>
       <div class="container">
         <ul data-nav></ul>
       </div>
     </nav>
-    <header>
-      <div class="container headline">
-        <section>
-          <h1>Victoria Cheng</h1>
-          <span>Software Developer</span>
-          <p>
-            Hi, I am Victoria Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Temporibus aliquam libero incidunt. In placeat
-            tempora asperiores facilis vero et provident odit delectus commodi
-            nihil ratione repellendus cupiditate inventore accusamus alias
-            eligendi, fugit ipsum esse error incidunt. Ipsum nulla iure neque.
-          </p>
-        </section>
-        <div class="profile-pic">
-          <img src="./images/profile-pic.png" alt="" />
+    <header id="home">
+      <div class="container">
+        <div class="about-me">
+          <section data-about>
+            <h1>Victoria Cheng</h1>
+            <code
+              >const information = {
+              <div class="code">role: 'Software Developer',</div>
+              <div class="code">location: 'Canada',</div>
+              <div class="code">
+                interests: [
+                <div class="code">'Netflix',</div>
+                <div class="code">'Video Games',</div>
+                <div class="code">'Mechancial Keyboard'</div>
+                ]
+              </div>
+              }</code
+            >
+            <aside data-socials><ul></ul></aside>
+          </section>
+          <div class="profile-pic">
+            <img src="./images/profile-pic.png" alt="Victoria" />
+          </div>
+        </div>
+
+        <div class="dev-service">
+          <div class="buttons">
+            <button>need a dev?</button>
+            <button>need a site?</button>
+          </div>
+          <div class="need">
+            <section data-dev class="">
+              <p>
+                Passion for learning and improvement has always been part of me.
+                While working with different people, I worked to make sure
+                everyone is on the same page. Passion for learning and
+                improvement has always been part of me. While working with
+                different people, I worked to make sure everyone is on the same
+                page.
+              </p>
+              <p>
+                Passion for learning and improvement has always been part of me.
+                While working with different people, I worked to make sure
+                everyone is on the same page.
+              </p>
+            </section>
+            <section data-service class="hide-content">
+              <p>
+                Do you need a webiste? Or do you need me to update or improve
+                your website? In the moible age, responsive and accessible web
+                presence is a must. It is my privilege to offer the opportunity
+                to be seen on the web to small businesses and individuals aronud
+                me. How can I help you today?
+              </p>
+            </section>
+          </div>
         </div>
       </div>
     </header>
     <main class="container">
       <section data-skills>
         <h2>skills</h2>
-        <ul>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-          <li class="icon">
-            <img src="./images/skills/css3.png" alt="" />
-          </li>
-        </ul>
+        <div class="skills-container"></div>
       </section>
-      <section data-projects>
+      <section id="projects" data-projects>
         <h2>projects</h2>
         <div data-showcase class="showcase"></div>
       </section>
-      <section data-contact>
-        <h2>contact</h2>
-        <form name="contact" method="POST" data-netlify="true">
-          <p>
-            <label>name: <input type="text" name="name" /></label>
-          </p>
-          <p>
-            <label>email: <input type="email" name="email" /></label>
-          </p>
-          <p>
-            <label>subject: <input type="text" name="subject" /></label>
-          </p>
-          <p>
-            <label>message: <textarea name="message"></textarea></label>
-          </p>
-          <p>
-            <button type="submit">send message!</button>
-          </p>
-        </form>
+      <section id="contact" data-contact>
+        <h2>let's connect</h2>
+        <div>
+          <section class="contact-left">
+            <p>
+              Thank you for your time and visit! Are you interested in contact
+              me? Feel free to send me message through the form or check out my
+              social media
+            </p>
+            <!-- <aside data-socials><ul></ul></aside> -->
+          </section>
+          <form
+            class="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+          >
+            <p>
+              <label>name: <input type="text" name="name" /></label>
+            </p>
+            <p>
+              <label>email: <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <label>subject: <input type="text" name="subject" /></label>
+            </p>
+            <p>
+              <label>message: <textarea name="message"></textarea></label>
+            </p>
+            <p>
+              <button type="submit">send message!</button>
+            </p>
+          </form>
+        </div>
       </section>
     </main>
     <footer>
-      <div class="container"></div>
+      <div class="container">
+        <p>&copy; Victoria Cheng <span data-current></span></p>
+      </div>
     </footer>
   </body>
 </html>
