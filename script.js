@@ -140,6 +140,7 @@ const handleSubmit = (e) => {
   })
     .then(() => console.log('Form successfully submitted'))
     .catch((error) => console.log(error));
+    myForm.reset()
 };
 
 document.querySelector('form').addEventListener('submit', handleSubmit);
