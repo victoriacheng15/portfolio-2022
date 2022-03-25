@@ -10,7 +10,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'prettier/prettier': ['error', { singleQuote: true, parser: 'flow' }],
     'implicit-arrow-linebreak': 0,
     'no-unused-expressions': 0,
     'function-paren-newline': 0,
