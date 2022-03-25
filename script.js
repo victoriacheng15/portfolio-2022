@@ -6,10 +6,7 @@ const buttons = document.querySelectorAll('.buttons button');
 const devContent = document.querySelector('[data-dev]');
 const serviceContent = document.querySelector('[data-service]');
 
-const toggleContent = (contents) => {
-  contents.forEach((content) => content.classList.toggle('hide-content'));
-};
-
+// get heights of dev and service content
 const setHeight = () => {
   const devOrService = document.querySelector('.need');
   const devHeight = devContent.getBoundingClientRect().height;
@@ -17,22 +14,30 @@ const setHeight = () => {
   const totalHeight = devHeight > serviceHeight ? devHeight : serviceHeight;
   devOrService.style.height = `${totalHeight}px`;
 };
+// setHeight eventlistners
+window.addEventListener('DOMContentLoaded', setHeight);
+window.addEventListener('resize', setHeight);
+// end of get heights of dev and service content
 
-// setHeight();
+// show dev or service content
+const toggleContent = (contents) => {
+  contents.forEach((content) => content.classList.toggle('hide-content'));
+};
+
 const showContent = (button) => {
   const contents = [devContent, serviceContent];
   const isDevBtn = button.textContent.includes('dev');
   isDevBtn ? toggleContent(contents) : toggleContent(contents);
 };
-
 // dev or service buttons event listener
 buttons.forEach((button) =>
   button.addEventListener('click', () => {
+    buttons.forEach((btn) => btn.classList.remove('clicked'));
+    button.classList.add('clicked');
     showContent(button);
   })
 );
-window.addEventListener('DOMContentLoaded', setHeight);
-window.addEventListener('resize', setHeight);
+// end of show dev or service content
 
 // create elements
 const createElement = (tag) => document.createElement(tag);
@@ -71,7 +76,7 @@ const skillList = (info) => {
 
 // create social media links
 const socialList = (info) => {
-  const socialSections = [...document.querySelectorAll('[data-socials] ul')];
+  const socialSection = document.querySelector('[data-socials]');
   const socials = info.socialMedia;
   socials.forEach((social) => {
     const li = createElement('li');
@@ -84,7 +89,7 @@ const socialList = (info) => {
     i.classList.add('fa-brands', social.name);
     a.appendChild(i);
     li.appendChild(a);
-    socialSections.forEach((section) => section.appendChild(li));
+    socialSection.appendChild(li);
   });
 };
 
@@ -124,13 +129,27 @@ const createProjectCard = (info) => {
   });
 };
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const myForm = document.querySelector('.contact-form');
+  const formData = new FormData(myForm);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log('Form successfully submitted'))
+    .catch((error) => console.log(error));
+};
+
+document.querySelector('form').addEventListener('submit', handleSubmit);
+
 // show current year in the footer
 function currentYear() {
   const year = document.querySelector('[data-current]');
   const date = new Date().getFullYear();
   year.textContent = date;
 }
-
 currentYear();
 
 // fetch data from info.json
@@ -143,5 +162,4 @@ async function populate() {
   skillList(info);
   createProjectCard(info);
 }
-
 populate();
