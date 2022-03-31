@@ -41,12 +41,6 @@
       "description": "A mulit-pages site that show information about destination, crew and technology for space traveling!"
     },
     {
-      "name": "rock paper and scissors",
-      "live": "https://victoriacheng15.github.io/top-rock-paper-scissors/",
-      "techStack": "HTML and CSS, and JavaScript",
-      "description": "Time to relax a bit and play rock paper, and scissors game!"
-    },
-    {
       "name": "loopstudio landing page",
       "live": "https://victoriacheng15.github.io/frontend-mentor-challenges/loopstudios-landing-page/",
       "techStack": "HTML, CSS, and JavaScript",

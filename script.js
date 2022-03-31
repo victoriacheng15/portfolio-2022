@@ -1,18 +1,15 @@
-// const navHeight = document.querySelector('nav .container');
-// const height = navHeight.getBoundingClientRect();
-// console.log(height.height);
-
 const buttons = document.querySelectorAll('.buttons button');
 const devContent = document.querySelector('[data-dev]');
 const serviceContent = document.querySelector('[data-service]');
 
 // get heights of dev and service content
 const setHeight = () => {
-  const devOrService = document.querySelector('.need');
+  const need = document.querySelector('.need');
   const devHeight = devContent.getBoundingClientRect().height;
   const serviceHeight = serviceContent.getBoundingClientRect().height;
-  const totalHeight = devHeight > serviceHeight ? devHeight : serviceHeight;
-  devOrService.style.height = `${totalHeight}px`;
+  need.style.height = `${
+    devHeight > serviceHeight ? devHeight : serviceHeight
+  }px`;
 };
 // setHeight eventlistners
 window.addEventListener('DOMContentLoaded', setHeight);
@@ -29,6 +26,7 @@ const showContent = (button) => {
   const isDevBtn = button.textContent.includes('dev');
   isDevBtn ? toggleContent(contents) : toggleContent(contents);
 };
+
 // dev or service buttons event listener
 buttons.forEach((button) =>
   button.addEventListener('click', () => {
@@ -39,10 +37,20 @@ buttons.forEach((button) =>
 );
 // end of show dev or service content
 
-// create elements
+// helpers
 const createElement = (tag) => document.createElement(tag);
+const setAttributes = (element, attributes) => {
+  for (const key in attributes) {
+    element.setAttribute(key, attributes[key]);
+  }
+};
 const imagePath = (type, name) =>
   `./images/${type}/${name.split(' ').join('-')}.png`;
+
+const nav = document.querySelector('nav .container');
+const navHeight = nav.getBoundingClientRect().height;
+const h2s = [...document.querySelectorAll('h2')];
+h2s.forEach((header) => (header.style.paddingTop = `${navHeight + 16}px`));
 
 // create nav links
 const navbar = (info) => {
@@ -67,8 +75,10 @@ const skillList = (info) => {
     const icon = createElement('div');
     icon.classList.add('icon');
     const image = createElement('img');
-    image.setAttribute('src', imagePath('skills', skill));
-    image.setAttribute('alt', skill);
+    setAttributes(image, {
+      src: imagePath('skills', skill),
+      alt: skill,
+    });
     icon.appendChild(image);
     skillContainer.appendChild(icon);
   });
@@ -81,10 +91,14 @@ const socialList = (info) => {
   socials.forEach((social) => {
     const li = createElement('li');
     li.classList.add('social-link');
+
     const a = createElement('a');
-    a.setAttribute('href', social.address);
-    a.setAttribute('target', '_blank');
-    a.setAttribute('rel', 'noreferrer');
+    setAttributes(a, {
+      href: social.address,
+      target: '_blank',
+      rel: 'noreferrer',
+    });
+
     const i = createElement('i');
     i.classList.add('fa-brands', social.name);
     a.appendChild(i);
@@ -102,15 +116,20 @@ const createProjectCard = (info) => {
 
     const projectDiv = createElement('div');
     projectDiv.classList.add('project-image');
+
     const projectLink = createElement('a');
-    projectLink.setAttribute('href', project.live);
-    projectLink.setAttribute('target', '_blank');
-    projectLink.setAttribute('rel', 'noreferrer');
+    setAttributes(projectLink, {
+      href: project.live,
+      target: '_blank',
+      rel: 'noreferrer',
+    });
     projectDiv.appendChild(projectLink);
 
     const projectImage = createElement('img');
-    projectImage.setAttribute('src', imagePath('projects', project.name));
-    projectImage.setAttribute('alt', project.name);
+    setAttributes(projectImage, {
+      src: imagePath('projects', project.name),
+      alt: project.name,
+    });
     projectLink.appendChild(projectImage);
 
     const h3 = createElement('h3');
@@ -125,10 +144,11 @@ const createProjectCard = (info) => {
     const sectionArr = [projectDiv, h3, pTech, pDesc];
     sectionArr.forEach((element) => card.appendChild(element));
 
-    showcase.appendChild(card);
+    showcase.insertAdjacentElement('afterbegin', card);
   });
 };
 
+// start of form
 const handleSubmit = (e) => {
   e.preventDefault();
   const myForm = document.querySelector('.contact-form');
@@ -140,10 +160,11 @@ const handleSubmit = (e) => {
   })
     .then(() => console.log('Form successfully submitted'))
     .catch((error) => console.log(error));
-    myForm.reset()
+  myForm.reset();
 };
-
-document.querySelector('form').addEventListener('submit', handleSubmit);
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+// end of form
 
 // show current year in the footer
 function currentYear() {

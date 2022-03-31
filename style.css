@@ -189,7 +189,7 @@ nav ul li,
 
 /*  header */
 header {
-  padding-top: 4rem;
+  padding-top: 3rem;
 }
 
 header > .container,
@@ -252,14 +252,14 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .buttons button {
@@ -280,7 +280,7 @@ code {
 section[data-dev],
 section[data-service] {
   position: absolute;
-  width: 80%;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   transition: var(--standard-transition);
@@ -320,10 +320,10 @@ aside ul {
 
 /* main */
 main {
-  padding-block: 5rem;
+  padding-block-end: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  /* gap: 3rem; */
 }
 
 /*  for skill icons */
@@ -360,7 +360,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: center;
-  gap: 5rem;
+  gap: 4rem;
 }
 
 /*  projects - card style */
