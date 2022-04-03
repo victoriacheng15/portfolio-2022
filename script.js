@@ -50,7 +50,7 @@ const imagePath = (type, name) =>
 const nav = document.querySelector('nav .container');
 const navHeight = nav.getBoundingClientRect().height;
 const h2s = [...document.querySelectorAll('h2')];
-h2s.forEach((header) => (header.style.paddingTop = `${navHeight + 16}px`));
+h2s.forEach((header) => header.style.paddingTop = `${navHeight + 16}px`);
 
 // create nav links
 const navbar = (info) => {

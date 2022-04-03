@@ -9,7 +9,7 @@
   --ff-heading: 'Ubuntu Mono', monospace;
   --ff-text: 'Sarabun', sans-serif;
 
-  --max-wdith: 1280px;
+  --max-wdith: 1050px;
 
   --standard-transition: all 450ms ease-in-out;
   --standard-radius: 5px;
@@ -112,7 +112,7 @@ p {
 
 .container {
   margin: 0 auto;
-  width: min(80%, var(--max-wdith));
+  width: min(90%, var(--max-wdith));
 }
 
 button {
@@ -315,7 +315,7 @@ aside ul {
 }
 
 .social-link:hover {
-  box-shadow: 5px 5px 0 var(--blue-900), -5px -5px 0 var(--blue-900);
+  box-shadow: 3px 3px 0 var(--blue-900), -3px -3px 0 var(--blue-900);
 }
 
 /* main */
@@ -323,7 +323,6 @@ main {
   padding-block-end: 3rem;
   display: flex;
   flex-direction: column;
-  /* gap: 3rem; */
 }
 
 /*  for skill icons */
@@ -357,9 +356,9 @@ main {
 /*  projects container */
 .showcase {
   padding: 0.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   gap: 4rem;
 }
 
@@ -377,9 +376,12 @@ main {
 
 .card {
   padding: 0.5rem;
+  min-height: 425px;
   border: 5px solid var(--blue-900);
   box-shadow: 8px 8px 0 var(--blue-900), -8px -8px 0 var(--blue-900);
   transition: var(--standard-transition);
+  flex: 1 1 350px;
+  max-width: 400px;
 }
 
 .card:hover {
@@ -390,6 +392,9 @@ main {
   height: 200px;
   flex: 0 1 45%;
   overflow: hidden;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
 }
 
 .project-info p {
@@ -434,6 +439,11 @@ form {
 
 .contact-left p:nth-child(2) {
   font-size: 1.5rem;
+}
+
+.underline {
+  text-decoration: underline wavy var(--blue-800);
+  text-underline-offset: 5px;
 }
 
 form p,
