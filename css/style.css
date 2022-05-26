@@ -6,8 +6,8 @@
   --smoke-white: hsl(0, 0%, 96%);
 
   /*  font-weight: 400, 600 */
-  --ff-heading: 'Ubuntu Mono', monospace;
-  --ff-text: 'Sarabun', sans-serif;
+  --ff-heading: "Ubuntu Mono", monospace;
+  --ff-text: "Sarabun", sans-serif;
 
   --max-wdith: 1050px;
 
@@ -63,7 +63,10 @@ img {
 
 /* global style */
 body {
-  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
   font-family: var(--ff-text);
   color: var(--blue-900);
 }
@@ -82,7 +85,7 @@ h1 {
 
 h2 {
   font-size: 1.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -172,7 +175,7 @@ nav ul li,
 
 .nav-link:before {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 8px;
   left: 0;
   width: 0;
@@ -188,14 +191,8 @@ nav ul li,
 }
 
 /*  header */
-header {
-  padding-top: 3rem;
-}
-
 header > .container,
-.about-me,
-section[data-about],
-section[data-need] {
+.about-me {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,56 +243,6 @@ code {
   border-radius: 50%;
 }
 
-/* dev or service */
-.dev-service {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-}
-
-.buttons button {
-  width: min(90%, 250px);
-}
-
-.buttons button.clicked {
-  background: var(--blue-600);
-  color: var(--blue-900);
-}
-
-.need {
-  width: 100%;
-  height: 210px;
-  position: relative;
-}
-
-section[data-dev],
-section[data-service] {
-  position: absolute;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: var(--standard-transition);
-}
-
-section[data-dev] p,
-section[data-service] p {
-  line-height: 2;
-  font-size: 1.25rem;
-}
-
-.hide-content {
-  opacity: 0;
-}
-
 /*  aside - social media */
 aside ul {
   display: flex;
@@ -320,9 +267,9 @@ aside ul {
 
 /* main */
 main {
-  padding-block-end: 3rem;
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
 
 /*  for skill icons */
@@ -351,6 +298,29 @@ main {
 .icon img {
   width: 100%;
   height: 100%;
+}
+
+/* choices - developer or freelancer */
+.choices {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.choices summary {
+  font-size: 1.35rem;
+}
+
+.developer,
+.freelancer {
+  flex: 1 0 45%;
+}
+
+@media (min-width: 768px) {
+  .choices {
+    flex-direction: row;
+  }
 }
 
 /*  projects container */
@@ -398,7 +368,7 @@ main {
 }
 
 .project-info p {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 /*  form */
@@ -481,12 +451,12 @@ textarea:focus {
 
 /* footer */
 footer {
-  padding-block: 1.25rem;
+  padding-block: 16px;
   background: var(--blue-900);
 }
 
 footer p {
   color: var(--smoke-white);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   text-align: center;
 }

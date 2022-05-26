@@ -48,45 +48,49 @@
             <img src="./images/profile-pic.png" alt="Victoria" />
           </div>
         </div>
-        <div class="dev-service">
-          <div class="buttons">
-            <button class="clicked">need a dev?</button>
-            <button>need a site?</button>
-          </div>
-          <div class="need">
-            <section data-dev class="">
-              <p>
-                I have a passion for learning and improvement. While working
-                with people from different teams, I always make sure everyone is
-                on the same page during the development process with simpler and
-                efficient ways as much as possible. Let's thrive for the
-                improvement.
-              </p>
-              <p>
-                Outside of my work, I read random stuff (mostly tech related) on
-                the internet. It is pretty amazing that our life can be improved
-                by lines of code!
-              </p>
-            </section>
-            <section data-service class="hide-content">
-              <p>
-                Do you need a website? I can build it for you! Or do you need me
-                to update or improve your website? I also can do these! In this
-                digital age where nearly everyone has access to either computers
-                or mobile phones, responsive and accessible web presence is a
-                must. It is my privilege to offer you the services that will
-                make your website for the world to see! How can I help you
-                today?
-              </p>
-            </section>
-          </div>
-        </div>
       </div>
     </header>
     <main class="container">
       <section data-skills>
         <h2>skills</h2>
         <div class="skills-container"></div>
+      </section>
+      <section class="choices">
+        <section class="developer">
+          <h2>looking for a developer?</h2>
+          <details>
+            <summary>Let's see what values I can bring!</summary>
+            <p>
+              I have 6 years work experience in fast-paced environment and
+              cross-functional teams with a deep understanding of the importance
+              of communication and prioritization while creating and maintaining
+              projects, possessing excellent business acumen in the field of
+              Product Development. Furthermore, I have a passion to learning
+              more about the open-source by contributing to projects, learning
+              and collaborating with others.
+            </p>
+            <p>
+              In my free time, I enjoy playing video games with friends,
+              watching shows/moves, and learning something new as the world
+              evolve. I am also interested in soldering mechanical keyboards!
+              Always be a life-long learner!
+            </p>
+          </details>
+        </section>
+        <section class="freelancer">
+          <h2>looking for a website?</h2>
+          <details>
+            <summary>Let's see what I can offer.</summary>
+            <p>
+              Do you need a website? I can build it for you! Or do you need me
+              to update or improve your website? I also can do these! In this
+              digital age where nearly everyone has access to either computers
+              or mobile phones, responsive and accessible web presence is a
+              must. It is my privilege to offer you the services that will make
+              your website for the world to see! How can I help you today?
+            </p>
+          </details>
+        </section>
       </section>
       <section id="projects" data-projects>
         <h2>projects</h2>
@@ -113,7 +117,51 @@
             <p class="underline">
               I am currently accepting new freelance clients!
             </p>
-            <aside><ul data-socials></ul></aside>
+            <aside>
+              <p>Check out my social medias below</p>
+              <ul data-socials>
+                <li class="social-link">
+                  <a
+                    aria-label="GitHub"
+                    href="https://github.com/victoriacheng15"
+                    target="_blank"
+                    ref="noreferrer"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </li>
+                <li class="social-link">
+                  <a
+                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/in/victoriacheng15"
+                    target="_blank"
+                    ref="noreferrer"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="social-link">
+                  <a
+                    aria-label="twitter"
+                    href="https://twitter.com/victoriacheng15"
+                    target="_blank"
+                    ref="noreferrer"
+                  >
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="social-link">
+                  <a
+                    aria-label="Hashnode Blog"
+                    href="https://victoriacheng15.hashnode.dev"
+                    target="_blank"
+                    ref="noreferrer"
+                  >
+                    <i class="fa-brands fa-hashnode"></i>
+                  </a>
+                </li>
+              </ul>
+            </aside>
           </section>
           <form
             class="contact-form"
@@ -122,16 +170,20 @@
             data-netlify="true"
           >
             <p>
-              <label>name: <input type="text" name="name" /></label>
+              <label>name: <input type="text" name="name" required /></label>
             </p>
             <p>
-              <label>email: <input type="email" name="email" /></label>
+              <label>email: <input type="email" name="email" required /></label>
             </p>
             <p>
-              <label>subject: <input type="text" name="subject" /></label>
+              <label
+                >subject: <input type="text" name="subject" required
+              /></label>
             </p>
             <p>
-              <label>message: <textarea name="message"></textarea></label>
+              <label
+                >message: <textarea name="message" required></textarea>
+              </label>
             </p>
             <p>
               <button type="submit">send message!</button>
@@ -141,9 +193,7 @@
       </section>
     </main>
     <footer>
-      <div class="container">
-        <p>&copy; Victoria Cheng <span data-current></span></p>
-      </div>
+      <p>&copy; Victoria Cheng <span data-current></span></p>
     </footer>
   </body>
 </html>
