@@ -1,42 +1,3 @@
-const buttons = document.querySelectorAll('.buttons button');
-const devContent = document.querySelector('[data-dev]');
-const serviceContent = document.querySelector('[data-service]');
-
-// get heights of dev and service content
-const setHeight = () => {
-  const need = document.querySelector('.need');
-  const devHeight = devContent.getBoundingClientRect().height;
-  const serviceHeight = serviceContent.getBoundingClientRect().height;
-  need.style.height = `${
-    devHeight > serviceHeight ? devHeight : serviceHeight
-  }px`;
-};
-// setHeight eventlistners
-window.addEventListener('DOMContentLoaded', setHeight);
-window.addEventListener('resize', setHeight);
-// end of get heights of dev and service content
-
-// show dev or service content
-const toggleContent = (contents) => {
-  contents.forEach((content) => content.classList.toggle('hide-content'));
-};
-
-const showContent = (button) => {
-  const contents = [devContent, serviceContent];
-  const isDevBtn = button.textContent.includes('dev');
-  isDevBtn ? toggleContent(contents) : toggleContent(contents);
-};
-
-// dev or service buttons event listener
-buttons.forEach((button) =>
-  button.addEventListener('click', () => {
-    buttons.forEach((btn) => btn.classList.remove('clicked'));
-    button.classList.add('clicked');
-    showContent(button);
-  })
-);
-// end of show dev or service content
-
 // helpers
 const createElement = (tag) => document.createElement(tag);
 const setAttributes = (element, attributes) => {
@@ -46,11 +7,6 @@ const setAttributes = (element, attributes) => {
 };
 const imagePath = (type, name) =>
   `./images/${type}/${name.split(' ').join('-')}.png`;
-
-const nav = document.querySelector('nav .container');
-const navHeight = nav.getBoundingClientRect().height;
-const h2s = [...document.querySelectorAll('h2')];
-h2s.forEach((header) => header.style.paddingTop = `${navHeight + 16}px`);
 
 // create nav links
 const navbar = (info) => {
@@ -81,29 +37,6 @@ const skillList = (info) => {
     });
     icon.appendChild(image);
     skillContainer.appendChild(icon);
-  });
-};
-
-// create social media links
-const socialList = (info) => {
-  const socialSection = document.querySelector('[data-socials]');
-  const socials = info.socialMedia;
-  socials.forEach((social) => {
-    const li = createElement('li');
-    li.classList.add('social-link');
-
-    const a = createElement('a');
-    setAttributes(a, {
-      href: social.address,
-      target: '_blank',
-      rel: 'noreferrer',
-    });
-
-    const i = createElement('i');
-    i.classList.add('fa-brands', social.name);
-    a.appendChild(i);
-    li.appendChild(a);
-    socialSection.appendChild(li);
   });
 };
 
@@ -180,7 +113,6 @@ async function populate() {
   const info = await (await fetch(data)).json();
 
   navbar(info);
-  socialList(info);
   skillList(info);
   createProjectCard(info);
 }
