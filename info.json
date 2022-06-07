@@ -1,13 +1,15 @@
 {
   "navlinks": ["home", "projects", "contact"],
   "skills": [
-    "html5",
-    "css3",
     "javascript",
     "react",
     "sass",
     "tailwindcss",
-    "git"
+    "git",
+    "firebase",
+    "figma",
+    "html5",
+    "css3"
   ],
   "socialMedia": [
     {

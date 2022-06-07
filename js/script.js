@@ -8,6 +8,7 @@ const setAttributes = (element, attributes) => {
 const imagePath = (type, name) =>
   `./images/${type}/${name.split(' ').join('-')}.png`;
 
+
 // create nav links
 const navbar = (info) => {
   const navList = document.querySelector('[data-nav]');
