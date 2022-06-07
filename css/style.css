@@ -279,7 +279,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .icon {
@@ -304,6 +304,7 @@ main {
 .choices {
   display: flex;
   justify-content: center;
+
   flex-direction: column;
   gap: 3rem;
 }
@@ -315,6 +316,16 @@ main {
 .developer,
 .freelancer {
   flex: 1 0 45%;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details p {
+  line-height: 2;
 }
 
 @media (min-width: 768px) {
