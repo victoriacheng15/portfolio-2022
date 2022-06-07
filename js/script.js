@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 // helpers
 const createElement = (tag) => document.createElement(tag);
 const setAttributes = (element, attributes) => {

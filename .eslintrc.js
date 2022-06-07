@@ -14,5 +14,6 @@ module.exports = {
     'no-unused-expressions': 0,
     'function-paren-newline': 0,
     'comma-dangle': 0,
+    'guard-for-in': 0,
   },
 };
